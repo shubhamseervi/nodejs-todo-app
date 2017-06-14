@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 
+// mongoose model struct for todo, with some basic validations
 var Todo = mongoose.model('Todo', {
   text: {
     type: String,
