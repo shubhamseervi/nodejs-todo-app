@@ -15,7 +15,6 @@ app.post('/todos', (req, res) => {
 
   // newing up todos and assigning POST response
   var todos = new Todo({
-
     //bodyParser: avaiable in body.
     text: req.body.text
   });
@@ -25,7 +24,7 @@ app.post('/todos', (req, res) => {
     res.send(doc);
   }, (e) => {
     // sending back the error block in response
-    res.send(e);
+    res.status(400).send(e);
   });
 });
 
@@ -35,8 +34,8 @@ app.get('/todos', (req, res) => {
     res.send({todos});
   }, (e) => {
     res.status(400).send(e);
-  })
-})
+  });
+});
 
 
 
